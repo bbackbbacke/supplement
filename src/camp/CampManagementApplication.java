@@ -23,8 +23,10 @@ public class CampManagementApplication {
     private static List<Score> scoreStore;
 
     // 과목 타입
-    private static String SUBJECT_TYPE_MANDATORY = "MANDATORY";
-    private static String SUBJECT_TYPE_CHOICE = "CHOICE";
+    protected static String SUBJECT_TYPE_MANDATORY = "MANDATORY";
+    protected static String SUBJECT_TYPE_CHOICE = "CHOICE";
+
+
 
     // index 관리 필드
     private static int studentIndex;
@@ -118,8 +120,8 @@ public class CampManagementApplication {
     }
 
     private static void displayMainView() throws InterruptedException {
-        boolean flag = true;
-        while (flag) {
+        boolean mainFlag = true;
+        while (mainFlag) {
             System.out.println("\n==================================");
             System.out.println("내일배움캠프 수강생 관리 프로그램 실행 중...");
             System.out.println("1. 수강생 관리");
@@ -131,7 +133,7 @@ public class CampManagementApplication {
             switch (input) {
                 case 1 -> displayStudentView(); // 수강생 관리
                 case 2 -> displayScoreView(); // 점수 관리
-                case 3 -> flag = false; // 프로그램 종료
+                case 3 -> mainFlag = false; // 프로그램 종료
                 default -> {
                     System.out.println("잘못된 입력입니다.\n되돌아갑니다!");
                     Thread.sleep(2000);
@@ -142,8 +144,8 @@ public class CampManagementApplication {
     }
 
     private static void displayStudentView() {
-        boolean flag = true;
-        while (flag) {
+        boolean studentFlag = true;
+        while (studentFlag) {
             System.out.println("==================================");
             System.out.println("수강생 관리 실행 중...");
             System.out.println("1. 수강생 등록");
@@ -155,10 +157,10 @@ public class CampManagementApplication {
             switch (input) {
                 case 1 -> StudentManagement.createStudent(); // 수강생 등록
                 case 2 -> StudentManagement.inquireStudent(); // 수강생 목록 조회
-                case 3 -> flag = false; // 메인 화면 이동
+                case 3 -> studentFlag = false; // 메인 화면 이동
                 default -> {
                     System.out.println("잘못된 입력입니다.\n메인 화면 이동...");
-                    flag = false;
+                    studentFlag = false;
                 }
             }
         }
