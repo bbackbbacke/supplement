@@ -69,6 +69,7 @@ public class StudentManagement {
         }
     }
 
+
     //학생 이름 정확히 받기
     private static String getExactStudentId(String studentName) {
         List<Student> sameNameStudentList = new ArrayList<>();
@@ -108,8 +109,3 @@ public class StudentManagement {
         }
     }
 }
-
-//수강생 이름 변경
-
-
-
