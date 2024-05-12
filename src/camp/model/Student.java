@@ -12,6 +12,7 @@ public class Student {
 
 
 
+
     public Student(String seq, String studentName, List<Subject> subjectList) {
         this.studentId = seq;
         this.studentName = studentName;
@@ -23,7 +24,7 @@ public class Student {
         return studentId;
     }
 
-    public String getStudentName() {
+    public  String getStudentName() {
         return studentName;
     }
 
